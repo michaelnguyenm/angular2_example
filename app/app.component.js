@@ -4,12 +4,12 @@
 //Used to avoid "polluting the global namespace"
 //In otherwords, all variables inside the IIFE stay within that scope
 (function(app) {
-    app.AppComponent = //The visual component, "exports" to app namespace
-        ng.core.Component({
+    app.AppComponent = ng.core //The visual component, "exports" to app namespace
+        .Component({
             selector: 'my-app',
             template: '<h1>Hello, World!</h1>'
         })
-        .class({ //Ordinarily allows us to give properties/methods for this part of the UI
-            constructor: function(){} //Empty constructor
+        .Class({ //Ordinarily allows us to give properties/methods for this part of the UI
+            constructor: function() {} //Empty constructor
         });
-})(window.app || (window.app{}));
+})(window.app || (window.app = {}));
